@@ -4,11 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="utente_db")
+@NamedQuery(name="Utente.findAll", query = "SELECT ut FROM Utente ut")
 @SequenceGenerator(name = "card_seq", sequenceName = "card_seq", allocationSize = 123)
 public class Utente {
 	
@@ -44,6 +46,6 @@ public class Utente {
 	public Long getNumTessera() {
 		return numTessera;
 	}
-
+	
 	
 }

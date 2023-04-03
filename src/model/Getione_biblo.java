@@ -1,15 +1,26 @@
 package model;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import model.Utente;
 
 public class Getione_biblo {
 	
 	static EntityManagerFactory emf = Persistence.createEntityManagerFactory("Project_w3");
 	static EntityManager em = emf.createEntityManager();
+	
+//	List<Utente> utenti = em.createNamedQuery("utente_db.findAll", Utente.class).getResultList();
+    
+
+    
+	
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -32,8 +43,8 @@ public class Getione_biblo {
 //		addRiviste(riviste2);
 
 		Utente usuario2 = new Utente();
-		usuario2.setNome("doas");
-		usuario2.setCognome("dosa cog");
+		usuario2.setNome("nom1");
+		usuario2.setCognome("cog1");
 		usuario2.setDataNascita(1991);
 		
 //		addUtente(usuario2);
@@ -46,11 +57,19 @@ public class Getione_biblo {
 		//e 10 giorni in milisecondi sono 10*24*60*60*1000 = 867.000.000
 		
 //		prestito1.setPrestito_date(1220227200000L);
-		addPrestito(prestito2);
+//		addPrestito(prestito2);
+//
+//		
+//		List<Utente> lista1 = findAllUser();
+//		
+//		lista1.forEach(ut-> System.out.println(ut));
+		
+				
+		List<Libri> lista2libri = findAllLibri();
+				
+		lista2libri.forEach(ut-> System.out.println(ut));
+		
 
-		
-		
-		
 //		Prestito prestito_something = new Prestito();
 //		
 //		prestito_something.getPrestito_date();
@@ -116,5 +135,14 @@ public class Getione_biblo {
 		
 	}
 	
+	public static List<Utente> findAllUser(){
+		Query q = em.createNamedQuery("Utente.findAll");
+		return q.getResultList();
+	}
+	
+	public static List<Libri> findAllLibri(){
+		Query q = em.createNamedQuery("Libri.findAll");
+		return q.getResultList();
+	}
 	
 }
