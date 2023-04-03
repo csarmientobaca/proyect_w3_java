@@ -1,14 +1,27 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="utente_db")
+@SequenceGenerator(name = "card_seq", sequenceName = "card_seq", allocationSize = 123)
 public class Utente {
 	
 	private String nome; 
 	private String cognome;
 	private Integer dataNascita;
 	
-	
+    @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "card_seq")
 	private Long numTessera;
 	
+    
+    
 	
 	public String getNome() {
 		return nome;
@@ -31,9 +44,6 @@ public class Utente {
 	public Long getNumTessera() {
 		return numTessera;
 	}
-	public void setNumTessera(Long numTessera) {
-		this.numTessera = numTessera;
-	}
-	
+
 	
 }

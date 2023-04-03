@@ -2,23 +2,37 @@ package model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="prestito")
 public class Prestito {
-//	utente
-//	elemento prestato
-//	data inizio prestito
-//	data restituzione gia calcolata
-//	data restituzione effettiva
-//	
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+	
+//    private User user;
+	
+	
+	
 	private Date prestito_date;
 	private Date return_date;
 
 	private Date was_returned_in;
 
+
+    public Prestito() {
+    }
 	
-	
-	  public Prestito(Date prestito_date) {
+	public Prestito(Date prestito_date, Date was_returned_in) {
 	        this.prestito_date = prestito_date;
-	        this.return_date = new Date(prestito_date.getTime() + 30 * 24 * 60 * 60 * 1000L); // set due date to 30 days after loan date
+	        this.return_date = new Date(prestito_date.getTime() + 30 * 24 * 60 * 60 * 1000L); //aggiunge 30 giorni
+	        this.was_returned_in = was_returned_in;
 	    }
 	    
 	    public Date getPrestito_date() {

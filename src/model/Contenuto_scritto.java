@@ -24,6 +24,9 @@ public abstract class Contenuto_scritto {
 	private Integer anno_pubb;
 	private Integer numero_pag;
 	
+	
+	
+	
 	public Long getISBN_Id() {
 		return ISBN_Id;
 	}
