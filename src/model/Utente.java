@@ -46,6 +46,11 @@ public class Utente {
 	public Long getNumTessera() {
 		return numTessera;
 	}
+	@Override
+	public String toString() {
+		return "Utente [nome=" + nome + ", cognome=" + cognome + ", dataNascita=" + dataNascita + ", numTessera="
+				+ numTessera + "]";
+	}
 	
 	
 }

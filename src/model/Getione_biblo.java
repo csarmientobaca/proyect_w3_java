@@ -60,14 +60,14 @@ public class Getione_biblo {
 //		addPrestito(prestito2);
 //
 //		
-//		List<Utente> lista1 = findAllUser();
+		List<Utente> lista1 = findAllUser();
 //		
-//		lista1.forEach(ut-> System.out.println(ut));
+		lista1.forEach(ut-> System.out.println(ut));
 		
-				
-		List<Libri> lista2libri = findAllLibri();
-				
-		lista2libri.forEach(ut-> System.out.println(ut));
+//				
+//		List<Libri> lista2libri = findAllLibri();
+//				
+//		lista2libri.forEach(ut-> System.out.println(ut));
 		
 
 //		Prestito prestito_something = new Prestito();

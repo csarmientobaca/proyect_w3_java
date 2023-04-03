@@ -25,5 +25,9 @@ public class Libri extends Contenuto_scritto{
 		public void setGenere(String genere) {
 			this.genere = genere;
 		}
+		@Override
+		public String toString() {
+			return "Libri [autore=" + autore + ", genere=" + genere + "]";
+		}
 	
 }
