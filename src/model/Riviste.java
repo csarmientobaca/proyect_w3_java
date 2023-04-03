@@ -15,6 +15,11 @@ public class Riviste extends Contenuto_scritto {
 
 	public void setPeriodicita(Periodicita periodicita) {
 		this.periodicita = periodicita;
+	}
+
+	@Override
+	public String toString() {
+		return "Riviste [periodicita=" + periodicita + "]";
 	} 
 	
 }

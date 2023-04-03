@@ -62,4 +62,12 @@ public class Prestito {
 	    public boolean isOverdue() {
 	        return was_returned_in == null && return_date.before(new Date());
 	    }
+
+		@Override
+		public String toString() {
+			return "Prestito [id=" + id + ", prestito_date=" + prestito_date + ", return_date=" + return_date
+					+ ", was_returned_in=" + was_returned_in + "]";
+		}
+	    
+	    
 }
